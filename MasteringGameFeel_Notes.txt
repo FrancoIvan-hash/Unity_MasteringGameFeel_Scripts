@@ -1,0 +1,14 @@
+GUN AIM:
+
+- Input.mousePosition
+---> returns the position of the mouse
+- Camera.main can now be called in Update() without being so computationally expensive
+- Mathf.Atan2(direction.y, direction.x)
+---> returns the angle in radians whose Tan is y/x
+---> returns a value somewhere in between -PI and PI
+---> need to convert this value to degrees so we can use that to rotate our gun in the game
+---> multiply this by Mathf.Rad2Deg to convert from radians to degrees
+- PlayerController.Instance.transform.InverseTransformPoint(_mousePos);
+---> _mousePos is a Vector2 containing the position of the mouse
+---> InverseTransformPoint() converts the mouse position (_mousePos) from world space to local space relative to the player's transform
+------> it also takes into consideration the player controller's local rotation values, so if it's flippled it'll do those calcs for us
